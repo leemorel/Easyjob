@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="1.0px"
+    android:insetRight="1.0px" >
+
+    <selector>
+        <item>
+            <shape android:shape="rectangle" >
+                <gradient
+                    android:angle="270.0"
+                    android:endColor="#809B88"
+                    android:startColor="#809B88" />
+
+                <corners android:radius="20dip" />
+            </shape>
+        </item>
+    </selector>
+
+</inset>

@@ -1,10 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.mob.sdk'
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.easyjob.android"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -17,6 +20,17 @@ android {
         }
     }
 }
+
+
+MobSDK {
+    appKey "28df11c5166d2"
+    appSecret "949af7998c76f77468cce921e41a9f81"
+
+    SMSSDK {
+        gui false
+    }
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

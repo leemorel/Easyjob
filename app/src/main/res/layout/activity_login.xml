@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+    <TextView
+        android:text="易兼职"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#696969"
+        android:textSize="35sp"
+        />
+
+    <LinearLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            >
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_phone" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="11"
+                android:hint="请输入手机号" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/yanzhengma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input"
+        android:orientation="vertical"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_yanzhengma"/>
+            <EditText
+                android:id="@+id/et_captcha"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="验证码"
+                android:maxLength="4"/>
+            <Button
+                android:id="@+id/bt_captcha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="获取验证码"
+                android:textColor="#FFFACA"
+                android:background="@drawable/bt_style"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/yanzhengma"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_centerHorizontal="true"
+        android:text="登  录"
+        android:background="@drawable/bt_bg_login"
+        android:layout_marginTop="30dp"
+        android:textColor="#696969"
+        android:textSize="20dp"/>
+
+
+</RelativeLayout>
