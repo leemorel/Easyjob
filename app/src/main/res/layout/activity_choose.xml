@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ChooseActivity">
+    <Button
+        android:id="@+id/bt_recruiter"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bt_choose_recruiter"
+        android:layout_gravity="center"
+        android:layout_marginTop="65dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去招聘"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="24dp"/>
+    <ImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_or"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/bt_part_timer"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bt_choose_part_time" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="找兼职"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:layout_marginBottom="65dp"/>
+</LinearLayout>

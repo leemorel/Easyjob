@@ -1,6 +1,7 @@
 package com.easyjob.android;
 
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -66,6 +68,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         } else if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
                             if (result == SMSSDK.RESULT_COMPLETE) {
                                 Toast.makeText(getApplicationContext(), "验证成功", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(LoginActivity.this,ChooseActivity.class);
+                                startActivity(intent);
+                                finish();
 
                                 // TODO 处理验证码验证通过的结果
                             } else {
@@ -91,6 +96,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.bt_captcha:
                 //判断手机号码是否正确
+//                Intent intent=new Intent(LoginActivity.this,ChooseActivity.class);
+//                startActivity(intent);
+////                finish();
+//                ///////////////////////////////////////////TODO 测试用，记得删除
                 if (!judgePhone(phone)) {
                     return;
                 }
@@ -119,7 +128,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         //判断手机号是否正确
-        private boolean judgePhone(String phone) {
+        private  boolean judgePhone(String phone) {
         if(isMatchLength(phone,11)
                 &&isMoblieNo(phone)){
             return true;

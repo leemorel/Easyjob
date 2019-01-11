@@ -4,6 +4,17 @@
     android:insetRight="1.0px" >
 
     <selector>
+        <item android:state_pressed="true">
+            <shape android:shape="rectangle" >
+                <gradient
+                    android:angle="270.0"
+                    android:endColor="#609B71"
+                    android:startColor="#609B71"
+                    />
+
+                <corners android:radius="120dip" />
+            </shape>
+        </item>
         <item>
             <shape android:shape="rectangle" >
                 <gradient
