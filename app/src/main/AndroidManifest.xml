@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/splashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,14 +29,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".ChooseActivity"></activity>
+        <activity android:name=".ChooseActivity" />
+        <activity
+            android:name=".RecruiterActivity"
+            android:label="@string/title_activity_recruiter" />
+        <activity android:name=".AboutActivity"
+            android:theme="@style/BarTheme"></activity>
     </application>
 
 </manifest>
