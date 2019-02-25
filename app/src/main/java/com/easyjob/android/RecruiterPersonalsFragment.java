@@ -39,6 +39,7 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
         about=(RelativeLayout) mView.findViewById(R.id.about);
         bt_logout = (Button) mView.findViewById(R.id.bt_logout);
         about.setOnClickListener(this);
+        telephone.setOnClickListener(this);
         return mView;
 
     }
@@ -50,6 +51,12 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
                 Intent intent=new Intent(getActivity(),AboutActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.telephone:
+                Intent intent1 = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+1234567890));
+                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent1);
+                break;
+
         }
 
     }
