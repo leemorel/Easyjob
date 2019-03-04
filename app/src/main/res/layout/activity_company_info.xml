@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompanyInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/im_recruiter_avator"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_default_avator" />
+        <TextView
+            android:id="@+id/recruiter_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#f2f3f4"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="公司简介"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/recruiter_introduction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="在当今社会，随着计算机和网络技术的迅速发展。网络购物成速发展。网络购物成速发展。网络购物成速发展。网络购物成速发展。网络购物成为了一种新的方式，并且被越来越多的人们所喜爱。网络购物和实体店相比，人们可以足不出户就可以购买想要的东西，不需要在各个实体店中来回奔波，大大节省时间和体力；实体店的手机种类远不如网上商城的多，人们在网上商城可以有更多种类的手机可以选择；网上购物不需要店面的租金和招聘销售人员等费用，手机的价格可以更加便宜[1]"
+                    android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="联系电话"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/recruiter_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:text="18312675880"
+                android:textSize="21sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="联系邮箱"
+                android:textSize="21sp" />
+
+            <TextView
+                android:id="@+id/recruiter_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="1242903797@qq.com"
+                android:textSize="21sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="公司地址"
+                android:textSize="21sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/recruiter_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="广东省广州市花都区天河路一雅虎富家女华纳多发点佛啊发髻哦"
+                    android:textSize="15sp" />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/bt_modify_company_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#f5f5f5"
+            android:text="修改信息"
+            android:textColor="#dd2c00"
+            android:textSize="21sp" />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

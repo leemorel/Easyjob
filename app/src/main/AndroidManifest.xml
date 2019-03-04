@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +20,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".SplashActivity"
             android:theme="@style/splashTheme">
@@ -41,8 +44,16 @@
         <activity
             android:name=".RecruiterActivity"
             android:label="@string/title_activity_recruiter" />
-        <activity android:name=".AboutActivity"
-            android:theme="@style/BarTheme"></activity>
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/BarTheme" />
+        <activity android:name=".CompanyInfoActivity"
+            android:theme="@style/BarTheme"
+            android:parentActivityName=".CompanyInfoActivity"/>
+        <activity android:name=".ModifyRecruiterInfoActivity"
+            android:theme="@style/BarTheme"
+            android:parentActivityName=".ModifyRecruiterInfoActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -67,8 +67,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             }
                         } else if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
                             if (result == SMSSDK.RESULT_COMPLETE) {
+                                phone = et_phone.getText().toString();
                                 Toast.makeText(getApplicationContext(), "验证成功", Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(LoginActivity.this,ChooseActivity.class);
+                                intent.putExtra("phone",phone);
                                 startActivity(intent);
                                 finish();
 
@@ -97,9 +99,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.bt_captcha:
                 //判断手机号码是否正确
                 Intent intent=new Intent(LoginActivity.this,ChooseActivity.class);
+                intent.putExtra("phone","13642591627");
                 startActivity(intent);
-////                finish();
-//                ///////////////////////////////////////////TODO 测试用，记得删除
+                ///////////////////////////////////////////TODO 测试用，记得删除
                 if (!judgePhone(phone)) {
                     return;
                 }

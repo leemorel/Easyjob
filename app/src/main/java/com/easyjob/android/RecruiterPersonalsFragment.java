@@ -40,6 +40,7 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
         bt_logout = (Button) mView.findViewById(R.id.bt_logout);
         about.setOnClickListener(this);
         telephone.setOnClickListener(this);
+        personal_company_info.setOnClickListener(this);
         return mView;
 
     }
@@ -55,6 +56,10 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
                 Intent intent1 = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+1234567890));
                 intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent1);
+                break;
+            case R.id.personal_company_info:
+                Intent intent2 = new Intent(getActivity(),CompanyInfoActivity.class);
+                startActivity(intent2);
                 break;
 
         }
