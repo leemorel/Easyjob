@@ -1,0 +1,100 @@
+package com.easyjob.android;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UpdateListener;
+
+public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
+    private EditText et_recruiter_company,et_recruiter_phone,et_recruiter_email,et_recruiter_introduction,et_recruiter_address;
+    private ImageButton im_recruiter_avator;
+    private Button bt_save_company_info;
+    private String id;
+    private String phone,email,introduction,company,address;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_modify_recruiter_info1);
+        initView();
+    }
+    private void initView(){
+        Bmob.initialize(this,"6f6a477b385f8b96ec36e900a2a5d184");
+        Intent intent2 = getIntent();
+        phone = intent2.getStringExtra("phone");
+        id = intent2.getStringExtra("id");
+        et_recruiter_address = (EditText) findViewById(R.id.et_recruiter_address);
+        et_recruiter_company = (EditText) findViewById(R.id.et_recruiter_company);
+        et_recruiter_email = (EditText) findViewById(R.id.et_recruiter_email);
+        et_recruiter_introduction = (EditText) findViewById(R.id.et_recruiter_introduction);
+        et_recruiter_phone = (EditText) findViewById(R.id.et_recruiter_phone);
+        im_recruiter_avator = (ImageButton) findViewById(R.id.im_recruiter_avator);
+        bt_save_company_info = (Button) findViewById(R.id.bt_save_company_info);
+        et_recruiter_phone.setText(phone);
+        bt_save_company_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                obtaintext();   //获取文本
+                //判断输入非空
+                if(!judgetextnotnull(address,company,email,introduction,phone)){
+                    return;
+                }
+                add_cruiter_info(); // 添加信息到数据库
+            }
+        });
+    }
+
+
+
+
+
+
+    private void obtaintext(){
+        address=et_recruiter_address.getText().toString();
+        company=et_recruiter_company.getText().toString();
+        email=et_recruiter_email.getText().toString();
+        introduction=et_recruiter_introduction.getText().toString();
+        phone=et_recruiter_phone.getText().toString();
+    }
+    private boolean judgetextnotnull(String address,String company,String email,String introduction,String phone){
+        if(address.isEmpty()||company.isEmpty()||email.isEmpty()||introduction.isEmpty()||phone.isEmpty()){
+            Toast.makeText(this,"请把信息输入齐整", Toast.LENGTH_SHORT).show();
+            return false;
+    }
+        else{
+            return true;
+        }
+    }
+
+    private void add_cruiter_info(){
+        Recruiter_Info r = new Recruiter_Info();
+        r.setRecruiter_address(address);
+        r.setRecruiter_company(company);
+        r.setRecruiter_email(email);
+        r.setRecruiter_profile(introduction);
+        r.setRecruiter_phone(phone);
+        r.update(id, new UpdateListener() {
+            @Override
+            public void done(BmobException e) {
+                if(e==null){
+                    Toast.makeText(ModifyRecruiterInfo1Activity.this,"保存成功",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ModifyRecruiterInfo1Activity.this,RecruiterActivity.class);
+                    startActivity(intent);
+                }else{
+                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                }
+            }
+        });
+    }
+
+
+}

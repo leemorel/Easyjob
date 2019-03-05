@@ -19,7 +19,7 @@ import cn.bmob.v3.listener.SaveListener;
 public class ChooseActivity extends AppCompatActivity {
     private Button bt_recruiter;
     private Button bt_part_timer;
-    public String id;   //重要
+    private String id,phone;   //重要
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,45 +31,57 @@ public class ChooseActivity extends AppCompatActivity {
         bt_recruiter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 =getIntent();
-                String phone = intent1.getStringExtra("phone");//////////////
-                BmobQuery<Recruiter_Info> query = new BmobQuery<>();
-                query.addWhereEqualTo("recruiter_phone", phone);
-                query.findObjects(new FindListener<Recruiter_Info>() {
-                    @Override
-                    public void done(List<Recruiter_Info> object, BmobException e) {
-                        if(e==null){
-                            if(object.size()==0){
-                                Intent intent1 =getIntent();
-                                String phone = intent1.getStringExtra("phone");////////////////
-                                uploadphone(phone); }
-                                else{
-                                for(Recruiter_Info recruiter_info:object){
-                                    id=recruiter_info.getObjectId();
-                                    Toast.makeText(getApplicationContext(), "你想提示的信息"+id,Toast.LENGTH_LONG).show();
-                                }
+                verification(); //验证用户是否已存在
 
-                            }
-                        }else{
-                            Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
-                        }
-                    }
-                });
-
-                Intent intent = new Intent(ChooseActivity.this, RecruiterActivity.class);
-                startActivity(intent);
             }
         });
         bt_part_timer.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view){
-                Intent intent = new Intent(ChooseActivity.this, RecruiterActivity.class);
-                startActivity(intent);
+
             }
         });
 
     }
-    private void uploadphone(String phone){
+
+
+
+    //验证用户是否存在
+    private void verification(){
+        Intent intent1 =getIntent();
+        String phone = intent1.getStringExtra("phone");//////////////
+        BmobQuery<Recruiter_Info> query = new BmobQuery<>();
+        query.addWhereEqualTo("recruiter_phone", phone);
+        query.findObjects(new FindListener<Recruiter_Info>() {
+            @Override
+            public void done(List<Recruiter_Info> object, BmobException e) {
+                if(e==null){
+                    if(object.size()==0){
+                        Intent intent1 =getIntent();
+                        String phone = intent1.getStringExtra("phone");////////////////
+                        uploadphone();         //不存在则创建新用户
+
+                    }
+                    else{
+                        for(Recruiter_Info recruiter_info:object){
+                            id=recruiter_info.getObjectId();
+                            Toast.makeText(getApplicationContext(), "测试你想提示的信息"+id,Toast.LENGTH_LONG).show();  // TODO 测试用
+                        }
+                        Intent intent = new Intent(ChooseActivity.this, RecruiterActivity.class);
+                        startActivity(intent);
+
+                    }
+                }else{
+                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                }
+            }
+        });
+    }
+
+
+
+
+    private void uploadphone(){
         Recruiter_Info r = new Recruiter_Info();
         r.setRecruiter_phone(phone);
         r.save(new SaveListener<String>() {
@@ -79,9 +91,14 @@ public class ChooseActivity extends AppCompatActivity {
                     Log.i("bmob","数据库错误："+e.getMessage()+","+e.getErrorCode());
                 }
                 else {
-                    Recruiter_Info recruiterid =new Recruiter_Info();
-                    id=recruiterid.getObjectId();
-                    Toast.makeText(getApplicationContext(), "你想提示的信息"+s,Toast.LENGTH_LONG).show();
+                    Intent intent1 =getIntent();
+                    String phone = intent1.getStringExtra("phone");
+                    id=s;                     /////objectid
+                    Toast.makeText(getApplicationContext(), "测试你想提示的信息"+phone+id,Toast.LENGTH_LONG).show();   //TODO  测试用，记得删除
+                    Intent intent2 = new Intent(ChooseActivity.this,ModifyRecruiterInfo1Activity.class);  //TODO 111
+                    intent2.putExtra("id",id);
+                    intent2.putExtra("phone",phone);
+                    startActivity(intent2);
                 }
             }
         });

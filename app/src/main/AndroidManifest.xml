@@ -47,13 +47,15 @@
         <activity
             android:name=".AboutActivity"
             android:theme="@style/BarTheme" />
-        <activity android:name=".CompanyInfoActivity"
-            android:theme="@style/BarTheme"
-            android:parentActivityName=".CompanyInfoActivity"/>
-        <activity android:name=".ModifyRecruiterInfoActivity"
-            android:theme="@style/BarTheme"
-            android:parentActivityName=".ModifyRecruiterInfoActivity">
-        </activity>
+        <activity
+            android:name=".CompanyInfoActivity"
+            android:parentActivityName=".CompanyInfoActivity"
+            android:theme="@style/BarTheme" />
+        <activity
+            android:name=".ModifyRecruiterInfoActivity"
+            android:parentActivityName=".ModifyRecruiterInfoActivity"
+            android:theme="@style/BarTheme"></activity>
+        <activity android:name=".ModifyRecruiterInfo1Activity"></activity>
     </application>
 
 </manifest>

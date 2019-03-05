@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ModifyRecruiterInfoActivity">
+    tools:context=".ModifyRecruiterInfo1Activity">
     <RelativeLayout
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -49,10 +49,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:text="联系电话"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="联系电话"/>
     <EditText
         android:id="@+id/et_recruiter_phone"
         android:layout_width="match_parent"
@@ -86,14 +86,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="公司简介"/>
+        android:text="公司简介"
+        android:hint="不超过200字"/>
     <EditText
         android:id="@+id/et_recruiter_introduction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
+        android:layout_marginRight="20dp"/>
     <Button
         android:id="@+id/bt_save_company_info"
         android:background="#ffffff"
@@ -104,8 +104,4 @@
         android:text="保存信息"
         android:textSize="20dp"
         android:textColor="#ff0000"/>
-
-
-
-
 </LinearLayout>

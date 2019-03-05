@@ -4,8 +4,25 @@ import cn.bmob.v3.BmobObject;
 
 public class Recruiter_Info extends BmobObject {
     private String recruiter_company;
-    private String recruiter_introduction;
+    private String recruiter_profile;
     private String recruiter_phone;
+    private String recruiter_email;
+    private String recruiter_address;
+
+    public String getRecruiter_address() {
+        return recruiter_address;
+    }
+    public String getRecruiter_profile() {
+        return recruiter_profile;
+    }
+
+    public void setRecruiter_profile(String recruiter_profile) {
+        this.recruiter_profile = recruiter_profile;
+    }
+    public void setRecruiter_address(String recruiter_address) {
+        this.recruiter_address = recruiter_address;
+    }
+
 
     public String getRecruiter_phone() {
         return recruiter_phone;
@@ -15,8 +32,6 @@ public class Recruiter_Info extends BmobObject {
         this.recruiter_phone = recruiter_phone;
     }
 
-    private String recruiter_email;
-    private String getRecruiter_address;
 
     public String getRecruiter_company() {
         return recruiter_company;
@@ -27,11 +42,11 @@ public class Recruiter_Info extends BmobObject {
     }
 
     public String getRecruiter_introduction() {
-        return recruiter_introduction;
+        return recruiter_profile;
     }
 
     public void setRecruiter_introduction(String recruiter_introduction) {
-        this.recruiter_introduction = recruiter_introduction;
+        this.recruiter_profile = recruiter_introduction;
     }
 
 
@@ -43,11 +58,4 @@ public class Recruiter_Info extends BmobObject {
         this.recruiter_email = recruiter_email;
     }
 
-    public String getGetRecruiter_address() {
-        return getRecruiter_address;
-    }
-
-    public void setGetRecruiter_address(String getRecruiter_address) {
-        this.getRecruiter_address = getRecruiter_address;
-    }
 }
