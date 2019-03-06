@@ -87,13 +87,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:text="公司简介"
-        android:hint="不超过200字"/>
+        />
     <EditText
         android:id="@+id/et_recruiter_introduction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:maxLength="200"
+        android:hint="不超过200字"/>
     <Button
         android:id="@+id/bt_save_company_info"
         android:background="#ffffff"

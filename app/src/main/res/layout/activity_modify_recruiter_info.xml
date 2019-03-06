@@ -93,6 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:maxLength="200"
         />
     <Button
         android:id="@+id/bt_save_company_info"

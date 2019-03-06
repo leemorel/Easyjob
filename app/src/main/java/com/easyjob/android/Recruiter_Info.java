@@ -1,6 +1,7 @@
 package com.easyjob.android;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobFile;
 
 public class Recruiter_Info extends BmobObject {
     private String recruiter_company;
@@ -8,6 +9,14 @@ public class Recruiter_Info extends BmobObject {
     private String recruiter_phone;
     private String recruiter_email;
     private String recruiter_address;
+    private BmobFile recruiter_avatar;
+    public BmobFile getRecruiter_avatar() {
+        return recruiter_avatar;
+    }
+
+    public void setRecruiter_avatar(BmobFile recruiter_avatar) {
+        this.recruiter_avatar = recruiter_avatar;
+    }
 
     public String getRecruiter_address() {
         return recruiter_address;
