@@ -65,9 +65,10 @@ public class ChooseActivity extends AppCompatActivity {
                     else{
                         for(Recruiter_Info recruiter_info:object){
                             id=recruiter_info.getObjectId();
-                            Toast.makeText(getApplicationContext(), "测试你想提示的信息"+id,Toast.LENGTH_LONG).show();  // TODO 测试用
                         }
                         Intent intent = new Intent(ChooseActivity.this, RecruiterActivity.class);
+                        intent.putExtra("id",id);
+                        Info.recruiter_id=id;
                         startActivity(intent);
 
                     }
@@ -94,7 +95,7 @@ public class ChooseActivity extends AppCompatActivity {
                     Intent intent1 =getIntent();
                     String phone = intent1.getStringExtra("phone");
                     id=s;                     /////objectid
-                    Toast.makeText(getApplicationContext(), "测试你想提示的信息"+phone+id,Toast.LENGTH_LONG).show();   //TODO  测试用，记得删除
+//                    Toast.makeText(getApplicationContext(), "测试你想提示的信息"+phone+id,Toast.LENGTH_LONG).show();   //TODO  测试用，记得删除
                     Intent intent2 = new Intent(ChooseActivity.this,ModifyRecruiterInfo1Activity.class);  //TODO 111
                     intent2.putExtra("id",id);
                     intent2.putExtra("phone",phone);

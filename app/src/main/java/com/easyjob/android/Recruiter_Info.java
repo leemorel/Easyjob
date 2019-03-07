@@ -10,6 +10,7 @@ public class Recruiter_Info extends BmobObject {
     private String recruiter_email;
     private String recruiter_address;
     private BmobFile recruiter_avatar;
+
     public BmobFile getRecruiter_avatar() {
         return recruiter_avatar;
     }

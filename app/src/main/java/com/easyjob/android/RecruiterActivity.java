@@ -1,11 +1,14 @@
 package com.easyjob.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RecruiterActivity extends AppCompatActivity {
 
@@ -33,15 +36,19 @@ public class RecruiterActivity extends AppCompatActivity {
             return false;
         }
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recruiter);
-
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Intent intent =getIntent();
+        String id =intent.getStringExtra("id");
+
+        Toast.makeText(RecruiterActivity.this,"id"+id,Toast.LENGTH_SHORT).show();       //TODO 删除
+
     }
+
 
 }
