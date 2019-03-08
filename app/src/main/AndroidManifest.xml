@@ -54,8 +54,10 @@
         <activity
             android:name=".ModifyRecruiterInfoActivity"
             android:parentActivityName=".ModifyRecruiterInfoActivity"
-            android:theme="@style/BarTheme"></activity>
-        <activity android:name=".ModifyRecruiterInfo1Activity"></activity>
+            android:theme="@style/BarTheme" />
+        <activity android:name=".ModifyRecruiterInfo1Activity" />
+        <activity android:name=".SystemNotification" />
+        <activity android:name=".SystemNotificationsActivity"></activity>
     </application>
 
 </manifest>

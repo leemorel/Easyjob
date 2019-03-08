@@ -6,9 +6,81 @@
     tools:context=".RecruiterNotificationsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/android_layout_bg">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:background="#fbfbfb"
+    android:layout_height="50dp">
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="消息"
+        android:background="#fbfbfb"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_system_notification"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="notifications" />
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="#fbfbfb"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/img_story"
+            android:layout_width="26.0dip"
+            android:layout_height="26.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="15.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_xitongtongzhi" />
+
+        <TextView
+            android:id="@+id/tv_story"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/img_story"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/img_story"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="系统通知"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+ />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_enter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_story"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/tv_story"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="记录点滴生活"
+            android:textColor="#bfbfbf"
+/>
+    </RelativeLayout>
+
+</LinearLayout>
 
 </FrameLayout>

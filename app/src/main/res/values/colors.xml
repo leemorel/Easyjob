@@ -3,5 +3,8 @@
     <color name="colorPrimary">#5ae2d7</color>
     <color name="colorPrimaryDark">#5ae2d7</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="black">#FF000000</color>
+    <color name="android_layout_bg">#f2f3f5</color>
+    <color name="bg_topbar">#fbfbfb</color>
 
 </resources>
