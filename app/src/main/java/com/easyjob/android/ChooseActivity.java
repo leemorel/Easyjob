@@ -19,12 +19,12 @@ import cn.bmob.v3.listener.SaveListener;
 public class ChooseActivity extends AppCompatActivity {
     private Button bt_recruiter;
     private Button bt_part_timer;
-    private String id,phone;   //重要
+    private String id,phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bmob.initialize(this,"6f6a477b385f8b96ec36e900a2a5d184");
+        Bmob.initialize(this,Info.appid);
         setContentView(R.layout.activity_choose);
         bt_recruiter = (Button) findViewById(R.id.bt_recruiter);
         bt_part_timer = (Button) findViewById(R.id.bt_part_timer);
@@ -95,7 +95,6 @@ public class ChooseActivity extends AppCompatActivity {
                     Intent intent1 =getIntent();
                     String phone = intent1.getStringExtra("phone");
                     id=s;                     /////objectid
-//                    Toast.makeText(getApplicationContext(), "测试你想提示的信息"+phone+id,Toast.LENGTH_LONG).show();   //TODO  测试用，记得删除
                     Intent intent2 = new Intent(ChooseActivity.this,ModifyRecruiterInfo1Activity.class);  //TODO 111
                     intent2.putExtra("id",id);
                     intent2.putExtra("phone",phone);

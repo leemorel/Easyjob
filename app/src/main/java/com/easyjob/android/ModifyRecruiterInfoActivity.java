@@ -58,27 +58,6 @@ public class ModifyRecruiterInfoActivity extends AppCompatActivity {
     }
     private void showInfo() {
 
-//            BmobQuery<Recruiter_Info> query = new BmobQuery<Recruiter_Info>();
-//            query.getObject(Info.recruiter_id, new QueryListener<Recruiter_Info>() {
-//                @Override
-//                public void done(Recruiter_Info recruiter_info, BmobException e) {
-//                    if (e == null) {
-//                        String rcompany = recruiter_info.getRecruiter_company();
-//                        String raddress = recruiter_info.getRecruiter_address();
-//                        String remail = recruiter_info.getRecruiter_email();
-//                        String rphone = recruiter_info.getRecruiter_phone();
-//                        String rprofile = recruiter_info.getRecruiter_profile();
-//                        et_recruiter_company.setText( rcompany);
-//                        et_recruiter_address.setText(raddress);
-//                        et_recruiter_email.setText(remail);
-//                        et_recruiter_phone.setText(rphone);
-//                        et_recruiter_introduction.setText(rprofile);
-//                    } else {
-//                        Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
-//                    }
-//                }
-//            });
-//        }
 
         et_recruiter_company.setText(Info.rcompany);
         et_recruiter_address.setText(Info.raddress);

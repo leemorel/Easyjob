@@ -48,6 +48,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:text="公司简介"
+                android:textColor="@color/word"
                 android:textSize="21sp" />
 
             <TextView
@@ -77,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
+                android:textColor="@color/word"
                 android:text="联系电话"
                 android:textSize="21sp" />
 
@@ -87,7 +89,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="10dp"
                 android:textSize="21sp" />
         </RelativeLayout>
 
@@ -102,6 +104,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:text="联系邮箱"
+                android:textColor="@color/word"
                 android:textSize="21sp" />
 
             <TextView
@@ -126,6 +129,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:text="公司地址"
+                android:textColor="@color/word"
                 android:textSize="21sp" />
         </RelativeLayout>
         <RelativeLayout
@@ -135,6 +139,9 @@
                     android:id="@+id/recruiter_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
                     android:paddingLeft="10dp"
                     android:textSize="15sp" />
         </RelativeLayout>

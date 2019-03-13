@@ -43,10 +43,11 @@ public class RecruiterActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        RecruiterHomeFragment homeFragment = new RecruiterHomeFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
         Intent intent =getIntent();
         String id =intent.getStringExtra("id");
-
-        Toast.makeText(RecruiterActivity.this,"id"+id,Toast.LENGTH_SHORT).show();       //TODO 删除
+        
 
     }
 

@@ -85,7 +85,8 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
                 startActivity(intent2);
                 break;
             case R.id.bt_logout:
-
+                Intent intent3 = new Intent(getActivity(),LoginActivity.class);
+                startActivity(intent3);
                 break;
 
 

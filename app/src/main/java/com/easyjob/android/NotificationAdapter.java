@@ -15,34 +15,8 @@ import java.util.List;
         this.notificationList=notificationList;             //数据初始化
     }
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
-
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View item =LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.notifications,viewGroup,false);
-        MyViewHolder myViewHolder = new MyViewHolder(item);
-        return myViewHolder;
-
-    }
-
-    // Replace the contents of a view (invoked by the layout manager)
-     //操作item
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        final Notification notification = getItem(position);
-        holder.tv_notification.setText(notification.getNotification());
-        holder.tv_notification_time.setText(notification.getUpdateAt_data());
-    }
-     protected Notification getItem(int position){
-         //获取内容
-         return notificationList.get(position);
-     }
-
-
-
-     //  初始化控件
-      class MyViewHolder extends RecyclerView.ViewHolder {
+     //  创建MyViewHolder,初始化控件
+     class MyViewHolder extends RecyclerView.ViewHolder {
 
          public TextView tv_notification;
          public TextView tv_notification_time;
@@ -54,10 +28,25 @@ import java.util.List;
 
          }
      }
+     //ViewHolder就是一个容器，它放你要展示的item里面的控件内容
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        View item =LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.notifications,viewGroup,false);   //获取notifications.xml
+        MyViewHolder myViewHolder = new MyViewHolder(item);
+        return myViewHolder;
 
+    }
 
-
-    // Return the size of your dataset (invoked by the layout manager)
+     //操作item，为item填充数据了
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        final Notification notification = getItem(position);
+        holder.tv_notification.setText(notification.getNotification());
+        holder.tv_notification_time.setText(notification.getUpdateAt_data());
+    }
+     protected Notification getItem(int position){
+         //获取内容
+         return notificationList.get(position);
+     }
     @Override
     public int getItemCount() {
         return notificationList.size();

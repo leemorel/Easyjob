@@ -13,7 +13,7 @@
     android:background="@color/android_layout_bg">
 <RelativeLayout
     android:layout_width="match_parent"
-    android:background="#fbfbfb"
+    android:background="@color/colorPrimary"
     android:layout_height="50dp">
     <TextView
         android:layout_width="wrap_content"
@@ -21,8 +21,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="消息"
-        android:background="#fbfbfb"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 </RelativeLayout>
     <RelativeLayout

@@ -42,7 +42,7 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
         initView();
     }
     private void initView(){
-        Bmob.initialize(this,"6f6a477b385f8b96ec36e900a2a5d184");
+        Bmob.initialize(this,Info.appid);
         Intent intent2 = getIntent();
         phone = intent2.getStringExtra("phone");
         id = intent2.getStringExtra("id");

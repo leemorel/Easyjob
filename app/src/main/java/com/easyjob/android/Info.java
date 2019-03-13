@@ -8,4 +8,6 @@ public class Info {
     static String raddress;
     static String rprofile;
     static String remail;
+
+    static String jtitle,jsalayr,jaddress,jrequirement,jdetails,jtime;
 }
