@@ -145,18 +145,24 @@
                     android:paddingLeft="10dp"
                     android:textSize="15sp" />
         </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <Button
             android:id="@+id/bt_modify_company_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="100dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
             android:background="#f5f5f5"
             android:text="修改信息"
             android:textColor="#dd2c00"
             android:textSize="21sp" />
-    </LinearLayout>
-    </ScrollView>
+    </RelativeLayout>
+
 </LinearLayout>

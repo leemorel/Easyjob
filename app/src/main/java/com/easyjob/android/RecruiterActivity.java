@@ -47,8 +47,6 @@ public class RecruiterActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
         Intent intent =getIntent();
         String id =intent.getStringExtra("id");
-        
-
     }
 
 

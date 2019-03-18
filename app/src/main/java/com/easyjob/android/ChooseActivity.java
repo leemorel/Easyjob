@@ -95,6 +95,7 @@ public class ChooseActivity extends AppCompatActivity {
                     Intent intent1 =getIntent();
                     String phone = intent1.getStringExtra("phone");
                     id=s;                     /////objectid
+                    Info.recruiter_id=id;
                     Intent intent2 = new Intent(ChooseActivity.this,ModifyRecruiterInfo1Activity.class);  //TODO 111
                     intent2.putExtra("id",id);
                     intent2.putExtra("phone",phone);

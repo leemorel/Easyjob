@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.icu.text.RelativeDateTimeFormatter;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -41,10 +43,21 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
     private View mView;
     private RelativeLayout personal_company_info, telephone, about;
     private Button bt_logout;
-    private ImageView im_recruiter_avator;
+    private ImageView iv_recruiter_avator;
     private TextView tv_recruiter_name;
-    private String id;
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+            Picasso.with(getContext()).load(Info.ravatar).fit().into(iv_recruiter_avator);
+            }
+        }, 1500);
+        display();           //显示头像，公司
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,9 +72,10 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
         telephone.setOnClickListener(this);
         bt_logout.setOnClickListener(this);
         personal_company_info.setOnClickListener(this);
-        im_recruiter_avator = (ImageView) mView.findViewById(R.id.im_recruiter_avator);
+        iv_recruiter_avator = (ImageView) mView.findViewById(R.id.iv_recruiter_avator);
         tv_recruiter_name = (TextView) mView.findViewById(R.id.tv_recruiter_name);
-        display();                    //显示头像，公司
+//        display();           //显示头像，公司
+//        Picasso.with(getContext()).load(Info.ravatar).into(iv_recruiter_avator);
         return mView;
 
 
@@ -87,33 +101,29 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
             case R.id.bt_logout:
                 Intent intent3 = new Intent(getActivity(),LoginActivity.class);
                 startActivity(intent3);
+                getActivity().finish();
                 break;
 
 
         }
     }
+
+
     private void display(){
+        Picasso.with(getContext()).load(Info.ravatar).into(iv_recruiter_avator);
         BmobQuery<Recruiter_Info> query = new BmobQuery<Recruiter_Info>();
-//        query.addWhereEqualTo("objectId",Info.appid);
-//        query.findObjects(new FindListener<Recruiter_Info>() {
-//            @Override
-//            public void done(List<Recruiter_Info> object, BmobException e) {
-//                if(e==null){
-//                    for(Recruiter_Info recruiter_info:object){
-//                      String uri= recruiter_info.getRecruiter_avatar().getFileUrl();
-//                        String name = recruiter_info.getRecruiter_company();
-//                        tv_recruiter_name.setText(name);
-//                        Picasso.with(getContext()).load("http://bmob-cdn-16376.b0.upaiyun.com/2019/03/07/77d731116d24454d9047e39b53bcd93a.jpg").into(im_recruiter_avator);
-//                    }
-//                }else{
-//                    Log.i("bmob","查询失败："+e.getMessage()+","+e.getErrorCode());
-//                }
-//            }
-//        });
+        query.addWhereEqualTo("objectId",Info.appid);
         query.getObject(Info.recruiter_id, new QueryListener<Recruiter_Info>() {
-            public void done(Recruiter_Info object, BmobException e) {
+            public void done(Recruiter_Info recruiter_info, BmobException e) {
                 if(e==null){
-                    tv_recruiter_name.setText( object.getRecruiter_company());
+                    tv_recruiter_name.setText( recruiter_info.getRecruiter_company());
+                    Info.ravatar = recruiter_info.getRecruiter_avatar().getFileUrl();
+                    Info.rcompany=recruiter_info.getRecruiter_company();
+                    Info.raddress=recruiter_info.getRecruiter_address();
+                    Info.remail=recruiter_info.getRecruiter_email();
+                    Info.rphone=recruiter_info.getRecruiter_phone();
+                    Info.rprofile=recruiter_info.getRecruiter_profile();
+
                 }else{
                     Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
                 }
@@ -121,6 +131,8 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
 
         });
     }
+
+
 
 }
 

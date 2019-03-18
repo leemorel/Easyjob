@@ -95,16 +95,22 @@
         android:layout_marginRight="20dp"
         android:maxLength="200"
         />
-    <Button
-        android:id="@+id/bt_save_company_info"
-        android:background="#ffffff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="保存信息"
-        android:textSize="20dp"
-        android:textColor="#ff0000"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/bt_save_company_info"
+            android:background="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="保存信息"
+            android:textSize="20dp"
+            android:textColor="#ff0000"/>
+    </RelativeLayout>
+
 
 
 

@@ -1,5 +1,6 @@
 package com.easyjob.android;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -92,18 +93,22 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
                         case IMAGE_REQUEST_CODE:
                             Uri avatarUri=data.getData();      //获取图片uri
                             resizeAvatar(avatarUri);            //裁剪
-                            //以下方法将获取的uri转为String类型哦。
-                            String []avatar={MediaStore.Images.Media.DATA};//将图片URI转换成存储路径
-                            Cursor cursor=this.getContentResolver().query(avatarUri, avatar, null, null, null);
-                            int index=cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-                            cursor.moveToFirst();
-                            String avatar_url=cursor.getString(index);
-                            upload(avatar_url);
                             break;
 
                         case RESIZE_REQUEST_CODE:
                             if (data!= null) {
-                                showAvatar(data);     //返回显示头像
+                                showAvatar(data);
+
+                                Bundle extras = data.getExtras();
+                                Bitmap photo = extras.getParcelable("data");
+
+                                Uri uri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), photo, null,null));
+                                String []avatar={MediaStore.Images.Media.DATA};//将图片URI转换成存储路径
+                                Cursor cursor=this.getContentResolver().query(uri, avatar, null, null, null);
+                                int index=cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                                cursor.moveToFirst();
+                                String imageUri=cursor.getString(index);
+                                upload(imageUri);
                             }
                             break;
                     }
@@ -128,8 +133,8 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
         intent.putExtra("crop", "true");
         intent.putExtra("aspectX", 1);
         intent.putExtra("aspectY", 1);
-        intent.putExtra("outputX", 150);
-        intent.putExtra("outputY", 150);
+        intent.putExtra("outputX", 350);
+        intent.putExtra("outputY", 350);
         intent.putExtra("return-data", true);
         startActivityForResult(intent, RESIZE_REQUEST_CODE);
 
@@ -166,20 +171,6 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
                     }
                 });
             }
-
-            private void insertObject(final BmobObject obj){
-                obj.update(id,new UpdateListener() {
-                    @Override
-                    public void done(BmobException e) {
-                        if(e==null){
-                            Toast.makeText(ModifyRecruiterInfo1Activity.this,"上传头像成功",Toast.LENGTH_SHORT).show();
-                        }else{
-                            Log.i("bmob","上传头像想失败："+e.getMessage()+","+e.getErrorCode());
-                        }
-                    }
-                });
-            }
-
             @Override
             public void onProgress(Integer value) {
                 // 返回的上传进度（百分比）
