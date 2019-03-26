@@ -209,7 +209,7 @@ public class ModifyPartimerInfoActivity extends AppCompatActivity {
                     Info.p_avatar = avatar.getFileUrl();
                     relevantPartimerInfo();
                 } else {
-                    Toast.makeText(ModifyPartimerInfoActivity.this, "上传头像失败:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ModifyPartimerInfoActivity.this, "上传头像失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -223,7 +223,7 @@ public class ModifyPartimerInfoActivity extends AppCompatActivity {
                     @Override
                     public void done(BmobException e) {
                         if (e == null) {
-                            Toast.makeText(ModifyPartimerInfoActivity.this, "上传头像成功:", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ModifyPartimerInfoActivity.this, "上传头像成功", Toast.LENGTH_SHORT).show();
                         } else {
                             Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
                         }
