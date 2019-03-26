@@ -9,7 +9,12 @@ public class Info {
     static String rprofile;
     static String remail;
 
-    static String jtitle,jsalayr,jaddress,jrequirement,jdetails,jtime;
+    static String jtitle,jsalayr,jaddress,jrequirement,jdetails,jtime,j_id;
 
     static String ravatar;
+
+    static String p_id,p_phone,p_avatar,p_name,p_age,p_email,p_education,p_height,p_sex,p_introduction;
+
+    static String city;
+
 }

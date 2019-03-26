@@ -159,7 +159,7 @@
             android:layout_marginRight="20dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:background="#f5f5f5"
+            android:background="@drawable/corner"
             android:text="修改信息"
             android:textColor="#dd2c00"
             android:textSize="21sp" />

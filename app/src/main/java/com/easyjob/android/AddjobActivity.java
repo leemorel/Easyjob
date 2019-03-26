@@ -8,6 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -17,6 +24,7 @@ public class AddjobActivity extends AppCompatActivity {
             et_j_address,et_j_requirement,et_j_details,et_j_time;
     private Button bt_add;
     private String title,salary,address,requirement,details,time;
+    private static String city;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +63,22 @@ public class AddjobActivity extends AppCompatActivity {
         requirement = et_j_requirement.getText().toString();
         details = et_j_details.getText().toString();
         time = et_j_time.getText().toString();
+
+        int flag = address.indexOf("省");
+        switch (flag){
+            case -1:
+                String[] parts2 = address.split("市");
+                city = parts2[0];
+                break;
+
+            default:
+                String[] parts = address.split("省");
+                String part2 = parts[1]; // 034556
+                String[] parts1 = part2.split("市");
+                city = parts1[0];
+                break;
+        }
+
     }
 
     private boolean judgetextnotnull(String title,String salary,String address,String requirement,String details,String time){
@@ -77,7 +101,9 @@ public class AddjobActivity extends AppCompatActivity {
         j.setJ_salary(salary+"/天");
         j.setJ_time(time);
         j.setJ_title(title);
+        j.setJ_company(Info.rcompany);
         j.setCompany(company);
+        j.setJ_city(city);
         j.save(new SaveListener<String>() {
             @Override
             public void done(String s, BmobException e) {

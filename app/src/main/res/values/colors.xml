@@ -8,8 +8,10 @@
     <color name="bg_topbar">#fbfbfb</color>
     <color name="word">#C1C1C1</color>
     <color name="grey">#F0F0F0</color>
+    <color name="deepgrey">#707070</color>
     <color name="white">#FFFFFF</color>
     <color name="red">#F00056</color>
+    <color name="drakwhite">#FCFCFC</color>
 
 
 </resources>

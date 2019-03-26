@@ -4,8 +4,9 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
-        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/central/'}
+//        jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/central/'}
     }
     dependencies {
         classpath 'com.mob.sdk:MobSDK:+'
@@ -20,9 +21,10 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+//        jcenter()
         maven{ url 'http://maven.aliyun.com/nexus/content/repositories/central/'}
         maven { url "https://raw.github.com/bmob/bmob-android-sdk/master" }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
 }
 

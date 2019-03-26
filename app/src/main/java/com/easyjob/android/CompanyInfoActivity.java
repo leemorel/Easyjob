@@ -30,7 +30,7 @@ public class CompanyInfoActivity extends AppCompatActivity {
     }
     private void initView(){
         getSupportActionBar().setTitle("企业信息");
-        Bmob.initialize(this, "6f6a477b385f8b96ec36e900a2a5d184");
+        Bmob.initialize(this, Info.appid);
         recruiter_company = (TextView)findViewById(R.id.recruiter_company);
         recruiter_phone = (TextView) findViewById(R.id.recruiter_phone);
         recruiter_email = (TextView) findViewById(R.id.recruiter_email);
@@ -55,7 +55,7 @@ public class CompanyInfoActivity extends AppCompatActivity {
         recruiter_email.setText(Info.remail);
         recruiter_phone.setText(Info.rphone);
         recruiter_introduction.setText(Info.rprofile);
-        Picasso.with(CompanyInfoActivity.this).load(Info.ravatar).into(im_recruiter_avator);
+        Picasso.with(CompanyInfoActivity.this).load(Info.ravatar).error(R.drawable.ic_default_avator).into(im_recruiter_avator);
 
 
 //        BmobQuery<Recruiter_Info> query = new BmobQuery<Recruiter_Info>();

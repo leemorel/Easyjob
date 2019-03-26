@@ -12,17 +12,17 @@
                     android:startColor="#FFF597"
                 />
 
-                <corners android:radius="120dip" />
+                <corners android:radius="15dip" />
             </shape>
         </item>
         <item>
             <shape android:shape="rectangle" >
                 <gradient
                     android:angle="270.0"
-                    android:endColor="#FFFACA"
-                    android:startColor="#FFFACA" />
+                    android:endColor="#E0FFFF"
+                    android:startColor="#E0FFFF" />
 
-                <corners android:radius="120dip" />
+                <corners android:radius="15dip" />
             </shape>
         </item>
     </selector>

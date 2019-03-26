@@ -41,17 +41,7 @@ public class ModifyRecruiterInfoActivity extends AppCompatActivity {
     private Button bt_save_company_info;
     private String address,phone,company,email,profile;
     private String imageUri;
-//    private Handler handler = new Handler(){
-//        public void handleMessage(Message msg){
-//            switch (msg.what){
-//                case RESIZE_REQUEST_CODE:
-//                    Picasso.with(ModifyRecruiterInfoActivity.this).load(Info.ravatar).into(im_recruiter_avator);
-//                    break;
-//                default:
-//                    break;
-//            }
-//        }
-//    };
+
     protected void onResume(){
         super.onResume();
         Handler handler = new Handler();
@@ -242,7 +232,7 @@ public class ModifyRecruiterInfoActivity extends AppCompatActivity {
                 if(e==null){
                     relevantRecruiterInfo();
                     Info.ravatar=avatar.getFileUrl();
-                    Toast.makeText(ModifyRecruiterInfoActivity.this ,"上传头像成功:" + avatar.getFileUrl(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ModifyRecruiterInfoActivity.this ,"上传头像成功:" ,Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(ModifyRecruiterInfoActivity.this ,"上传头像失败:" + e.getMessage(),Toast.LENGTH_SHORT).show();
 

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="#FCFCFC"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="8dp"
+        >
+        <TextView
+            android:id="@+id/tv_j_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="服务员"
+            android:textColor="@color/deepgrey"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tv_j_salary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginRight="10dp"
+            android:text="50/天"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tv_j_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="新世纪大酒店"
+            android:textSize="12dp"
+            android:textColor="#a1a1a1"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_j_company"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+            <ImageView
+                android:id="@+id/ic"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_icon_location"
+                />
+            <TextView
+                android:id="@+id/tv_j_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/ic"
+                android:layout_marginTop="9dp"
+                android:layout_centerVertical="true"
+                android:text="广州"
+                android:textColor="#bfbfbf"
+                android:textSize="14dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <ImageView
+                    android:id="@+id/t"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/ic_time"
+
+                    android:layout_marginRight="3dp"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:id="@+id/tv_j_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/t"
+                    android:layout_marginLeft="10dp"
+                    android:text="12.13-12.31"
+                    android:textColor="#bfbfbf"
+                    android:textSize="14dp"
+                    />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+        <!--<RelativeLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/tv_j_company">-->
+            <!--<ImageView-->
+                <!--android:id="@+id/ic"-->
+                <!--android:layout_width="15dp"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:background="@drawable/ic_icon_location"-->
+                <!--/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/tv_j_city"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_toRightOf="@id/ic"-->
+                <!--android:layout_marginTop="9dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text="广州"-->
+                <!--android:textColor="#bfbfbf"-->
+                <!--android:textSize="14dp"/>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/t"-->
+                <!--android:layout_width="15dp"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:background="@drawable/ic_time"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginRight="3dp"-->
+                <!--android:layout_centerVertical="true"/>-->
+            <!--<TextView-->
+
+                <!--android:id="@+id/tv_j_time"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="9dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_toRightOf="@id/t"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:text="12.13-12.31"-->
+                <!--android:textColor="#bfbfbf"-->
+                <!--android:textSize="14dp"-->
+                <!--/>-->
+
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="#dddd"
+        />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

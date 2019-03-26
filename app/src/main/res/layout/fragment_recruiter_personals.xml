@@ -140,29 +140,30 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="10dp"
-            android:paddingLeft="50dp"
-            android:paddingRight="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="#cdcdcd" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="3"
-            />
-        <Button
-            android:id="@+id/bt_logout"
-            android:background="#f5f5f5"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="100dp"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:text="退出登录"
-            android:textSize="21sp"
-            android:textColor="#dd2c00"/>
+            android:background="#cdcdcd"
+            android:layout_marginBottom="10dp"/>
+
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <Button
+               android:id="@+id/bt_logout"
+               android:background="@drawable/corner"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginBottom="100dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               android:text="退出登录"
+               android:textSize="21sp"
+               android:textColor="#dd2c00"/>
+
+       </RelativeLayout>
+
 
     </LinearLayout>
 </FrameLayout>

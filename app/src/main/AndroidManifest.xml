@@ -7,12 +7,21 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +31,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="44d71ac656c9aceb241e88edfdcc78f8" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/splashTheme">
@@ -54,8 +69,11 @@
         <activity
             android:name=".ModifyRecruiterInfoActivity"
             android:parentActivityName=".ModifyRecruiterInfoActivity"
-            android:theme="@style/BarTheme" />
-        <activity android:name=".ModifyRecruiterInfo1Activity" />
+            android:theme="@style/BarTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ModifyRecruiterInfo1Activity"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".SystemNotificationsActivity"
             android:parentActivityName=".AddjobActivity"
@@ -68,9 +86,51 @@
             android:name=".JobInfoActivity"
             android:parentActivityName=".JobInfoActivity"
             android:theme="@style/BarTheme" />
-        <activity android:name=".ModifyJobActivity"
+        <activity
+            android:name=".ModifyJobActivity"
             android:parentActivityName=".ModifyJobActivity"
-            android:theme="@style/BarTheme"></activity>
+            android:theme="@style/BarTheme" />
+        <activity
+            android:name=".PartimerActivity"
+            android:label="@string/title_activity_partimer"
+            android:theme="@style/DefaultCityPickerTheme" />
+        <activity
+            android:name=".ModifyPartimerInfo1Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".PartimerInfoActivity"
+            android:parentActivityName=".PartimerInfoActivity"
+            android:theme="@style/BarTheme" />
+        <activity
+            android:name=".ModifyPartimerInfoActivity"
+            android:parentActivityName=".ModifyPartimerInfoActivity"
+            android:theme="@style/BarTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".JobInfoViewActivity"
+            android:parentActivityName=".JobInfoViewActivity"
+            android:theme="@style/BarTheme" />
+        <activity
+            android:name=".CompanyInfoViewActivity"
+            android:parentActivityName=".CompanyInfoActivity"
+            android:theme="@style/BarTheme" />
+        <activity
+            android:name=".AppyerActivity"
+            android:parentActivityName=".AppyerActivity"
+            android:theme="@style/BarTheme" />
+        <activity
+            android:name=".PartimerInfoViewActivity"
+            android:parentActivityName=".PartimerInfoViewActivity"
+            android:theme="@style/BarTheme" />
+        <activity
+            android:name=".MyJobActivity"
+            android:parentActivityName=".MyJobActivity"
+            android:theme="@style/BarTheme" />
+
+        <activity android:name=".JobInfoView1Activity"
+            android:parentActivityName=".JobInfoView1Activity"
+            android:theme="@style/BarTheme"
+            />
     </application>
 
 </manifest>

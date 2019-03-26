@@ -37,6 +37,11 @@ public class RecruiterHomeFragment extends Fragment {
     public RecruiterHomeFragment() {
         // Required empty public constructor
     }
+    @Override
+    public void onResume(){
+        super.onResume();
+        getdata();
+    }
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
@@ -97,7 +102,7 @@ public class RecruiterHomeFragment extends Fragment {
             public void done(List<ParttimeJob> list, BmobException e) {
                 if(e==null){
                     List<ParttimeJob> parttimejobList = new ArrayList<>();
-                    parttimejobList.addAll(list)     ;     //添加数据到notificationList中
+                    parttimejobList.addAll(list);     //添加数据到notificationList中
                     ParttimejobAdapter parttimejobAdapter = new ParttimejobAdapter(getContext(),parttimejobList);
                     mrecyclerView.setAdapter(parttimejobAdapter);     //设置适配器
                 }

@@ -55,7 +55,7 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
             public void run() {
             Picasso.with(getContext()).load(Info.ravatar).fit().into(iv_recruiter_avator);
             }
-        }, 1500);
+        }, 800);
         display();           //显示头像，公司
     }
 
@@ -112,18 +112,17 @@ public class RecruiterPersonalsFragment extends Fragment implements View.OnClick
     private void display(){
         Picasso.with(getContext()).load(Info.ravatar).into(iv_recruiter_avator);
         BmobQuery<Recruiter_Info> query = new BmobQuery<Recruiter_Info>();
-        query.addWhereEqualTo("objectId",Info.appid);
+        query.addWhereEqualTo("objectId",Info.recruiter_id);
         query.getObject(Info.recruiter_id, new QueryListener<Recruiter_Info>() {
             public void done(Recruiter_Info recruiter_info, BmobException e) {
                 if(e==null){
                     tv_recruiter_name.setText( recruiter_info.getRecruiter_company());
-                    Info.ravatar = recruiter_info.getRecruiter_avatar().getFileUrl();
                     Info.rcompany=recruiter_info.getRecruiter_company();
                     Info.raddress=recruiter_info.getRecruiter_address();
                     Info.remail=recruiter_info.getRecruiter_email();
                     Info.rphone=recruiter_info.getRecruiter_phone();
                     Info.rprofile=recruiter_info.getRecruiter_profile();
-
+                    Info.ravatar = recruiter_info.getRecruiter_avatar().getFileUrl();
                 }else{
                     Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
                 }

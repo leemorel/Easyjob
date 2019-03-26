@@ -9,7 +9,28 @@ public class ParttimeJob extends BmobObject{
     private String j_requirement;
     private String j_details;
     private String j_time;
+    private String j_company;
+    private String j_city;
     private Recruiter_Info company;
+    public String getJ_city() {
+        return j_city;
+    }
+
+    public void setJ_city(String j_city) {
+        this.j_city = j_city;
+    }
+
+    public String getJ_company() {
+        return j_company;
+    }
+
+    public void setJ_company(String j_company) {
+        this.j_company = j_company;
+    }
+
+    public Recruiter_Info getCompany() {
+        return company;
+    }
 
     public String getJ_title() {
         return j_title;
@@ -60,9 +81,7 @@ public class ParttimeJob extends BmobObject{
     }
 
 
-    public Recruiter_Info getCompany() {
-        return company;
-    }
+
 
     public void setCompany(Recruiter_Info company) {
         this.company = company;

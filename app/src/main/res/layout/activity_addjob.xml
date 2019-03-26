@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="格式：1月2号到1月3号"/>
+        android:hint="格式：1.2-1.3"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:textColor="#ff0000"
-            android:background="#ffffff"
+            android:background="@drawable/corner"
             android:text="发布"/>
     </RelativeLayout>
 

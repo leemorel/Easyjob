@@ -98,9 +98,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.bt_captcha:
                 //判断手机号码是否正确
-                Intent intent=new Intent(LoginActivity.this,ChooseActivity.class);
-                intent.putExtra("phone","13642591627");
-                startActivity(intent);
+//                Intent intent=new Intent(LoginActivity.this,ChooseActivity.class);
+//                intent.putExtra("phone","13642591627");
+//                startActivity(intent);
                 ///////////////////////////////////////////TODO 测试用，记得删除
                 if (!judgePhone(phone)) {
                     return;

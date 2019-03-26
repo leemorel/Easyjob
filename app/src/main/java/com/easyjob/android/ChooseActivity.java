@@ -38,7 +38,10 @@ public class ChooseActivity extends AppCompatActivity {
         bt_part_timer.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view){
-
+                verificationPartimer(); //验证用户是否已存在
+//            Intent intent = new Intent(ChooseActivity.this,ModifyPartimerInfo1Activity.class);
+//            startActivity(intent);
+//            finish();
             }
         });
 
@@ -65,6 +68,8 @@ public class ChooseActivity extends AppCompatActivity {
                     else{
                         for(Recruiter_Info recruiter_info:object){
                             id=recruiter_info.getObjectId();
+                            Info.recruiter_id=id;
+                            Info.rcompany = recruiter_info.getRecruiter_company();
                         }
                         Intent intent = new Intent(ChooseActivity.this, RecruiterActivity.class);
                         intent.putExtra("id",id);
@@ -80,7 +85,35 @@ public class ChooseActivity extends AppCompatActivity {
     }
 
 
+    private void verificationPartimer(){
+        Intent intent1 =getIntent();
+        phone = intent1.getStringExtra("phone");//////////////
+        BmobQuery<Partimer_Info> query = new BmobQuery<>();
+        query.addWhereEqualTo("p_phone",phone);
+        query.findObjects(new FindListener<Partimer_Info>() {
+            @Override
+            public void done(List<Partimer_Info> list, BmobException e) {
+                if(e==null){
+                    if(list.size()==0){
+                        uploadphonePartimer();         //不存在则创建新用户
 
+                    }
+                    else{
+                        for(Partimer_Info partimer_info:list){
+                            Info.p_id=partimer_info.getObjectId();
+                            Info.p_name=partimer_info.getP_name();
+                        }
+                        Intent intent = new Intent(ChooseActivity.this, PartimerActivity.class);
+                        intent.putExtra("id",id);
+                        startActivity(intent);
+
+                    }
+                }else{
+                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                }
+            }
+        });
+    }
 
     private void uploadphone(){
         Recruiter_Info r = new Recruiter_Info();
@@ -99,6 +132,26 @@ public class ChooseActivity extends AppCompatActivity {
                     Intent intent2 = new Intent(ChooseActivity.this,ModifyRecruiterInfo1Activity.class);  //TODO 111
                     intent2.putExtra("id",id);
                     intent2.putExtra("phone",phone);
+                    startActivity(intent2);
+                }
+            }
+        });
+    }
+
+    private void uploadphonePartimer(){
+        Partimer_Info p = new Partimer_Info();
+        p.setP_phone(phone);
+        p.save(new SaveListener<String>() {
+            @Override
+            public void done(String s, BmobException e) {
+                if(e!=null){
+                    Log.i("bmob","数据库错误："+e.getMessage()+","+e.getErrorCode());
+                }
+                else {
+                    Intent intent1 =getIntent();
+                    Info.p_phone= intent1.getStringExtra("phone");
+                    Info.p_id=s;
+                    Intent intent2 = new Intent(ChooseActivity.this,ModifyPartimerInfo1Activity.class);  //TODO 111
                     startActivity(intent2);
                 }
             }

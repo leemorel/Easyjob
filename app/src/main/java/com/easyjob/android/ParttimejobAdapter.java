@@ -16,6 +16,7 @@ import java.util.List;
 public class ParttimejobAdapter extends RecyclerView.Adapter<ParttimejobAdapter.MyViewHolder> {
     private Context context;
     List<ParttimeJob> parttimeJobList = new ArrayList<>();
+
     public ParttimejobAdapter(Context context,List<ParttimeJob> parttimeJobList){
         this.parttimeJobList=parttimeJobList;
         this.context = context;

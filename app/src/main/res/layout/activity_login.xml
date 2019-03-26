@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    android:orientation="vertical"
     tools:context=".LoginActivity">
     <TextView
         android:text="易兼职"
@@ -22,10 +21,12 @@
     <LinearLayout
         android:id="@+id/input"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
+        android:layout_height="65dp"
         android:layout_marginLeft="28dp"
+        android:layout_above="@+id/yanzhengma"
         android:layout_marginRight="28dp"
+        android:alpha="0.5"
+        android:background="@drawable/corner"
         android:orientation="vertical">
 
         <LinearLayout
@@ -43,49 +44,54 @@
                 android:id="@+id/et_phone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/white"
                 android:maxLength="11"
                 android:hint="请输入手机号" />
         </LinearLayout>
 
 
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/yanzhengma"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/input"
-        android:orientation="vertical"
+        android:layout_height="65dp"
         android:layout_marginLeft="28dp"
+        android:layout_centerVertical="true"
         android:layout_marginRight="28dp"
-        android:layout_marginTop="30dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            >
+        android:layout_marginTop="30dp"
+        android:background="@drawable/corner1"
+        android:alpha="0.6"
+        >
+
             <ImageView
+                android:id="@+id/iv"
                 android:layout_width="42dp"
-                android:layout_height="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
                 android:src="@drawable/ic_yanzhengma"/>
             <EditText
+                android:layout_toRightOf="@id/iv"
                 android:id="@+id/et_captcha"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_height="42dp"
+                android:background="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
                 android:hint="验证码"
                 android:maxLength="4"/>
-            <Button
-                android:id="@+id/bt_captcha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="获取验证码"
-                android:textColor="#FFFACA"
-                android:background="@drawable/bt_style"
-                />
-        </LinearLayout>
-
-    </LinearLayout>
+        <Button
+            android:id="@+id/bt_captcha"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:text="获取验证码"
+            android:textColor="#FFFACA"
+            android:background="@drawable/corner_yanzhengma"
+            />
+    </RelativeLayout>
     <Button
         android:id="@+id/bt_login"
         android:layout_width="match_parent"
@@ -96,8 +102,8 @@
         android:layout_centerHorizontal="true"
         android:text="登  录"
         android:background="@drawable/bt_bg_login"
-        android:layout_marginTop="30dp"
-        android:textColor="#696969"
+        android:layout_marginTop="50dp"
+        android:textColor="#F08080	"
         android:textSize="20dp"/>
 
 

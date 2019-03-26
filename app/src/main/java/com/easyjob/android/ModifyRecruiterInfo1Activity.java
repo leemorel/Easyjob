@@ -135,6 +135,8 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
         intent.putExtra("aspectY", 1);
         intent.putExtra("outputX", 350);
         intent.putExtra("outputY", 350);
+        intent.putExtra("scale",true);
+        intent.putExtra("scaleUpIfNeeded", true);
         intent.putExtra("return-data", true);
         startActivityForResult(intent, RESIZE_REQUEST_CODE);
 
@@ -147,7 +149,7 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
                 if(e==null){
                     //bmobFile.getFileUrl()--返回的上传文件的完整地址
                     relevantRecruiterInfo();
-                    Toast.makeText(ModifyRecruiterInfo1Activity.this ,"上传头像成功:" + avatar.getFileUrl(),Toast.LENGTH_SHORT).show();
+
                 }else{
                     Toast.makeText(ModifyRecruiterInfo1Activity.this ,"上传头像失败:" + e.getMessage(),Toast.LENGTH_SHORT).show();
 
@@ -164,7 +166,7 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
                     @Override
                     public void done(BmobException e) {
                         if(e==null){
-                            Toast.makeText(ModifyRecruiterInfo1Activity.this,"关联到数据库",Toast.LENGTH_SHORT).show(); //
+                            Toast.makeText(ModifyRecruiterInfo1Activity.this ,"上传头像成功:",Toast.LENGTH_SHORT).show();
                         }else{
                             Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
                         }
@@ -186,6 +188,7 @@ public class ModifyRecruiterInfo1Activity extends AppCompatActivity {
         email=et_recruiter_email.getText().toString();
         introduction=et_recruiter_introduction.getText().toString();
         phone=et_recruiter_phone.getText().toString();
+        Info.rcompany=company;
     }
     private boolean judgetextnotnull(String address,String company,String email,String introduction,String phone){
         if(address.isEmpty()||company.isEmpty()||email.isEmpty()||introduction.isEmpty()||phone.isEmpty()){
