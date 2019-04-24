@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddjobActivity">
+    tools:context=".view.AddjobActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -44,6 +44,7 @@
     <EditText
         android:id="@+id/et_j_salary"
         android:hint="日薪"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -83,7 +84,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:hint="请输入详细地址，省市区"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="210dp">

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/android_layout_bg"
     android:orientation="vertical"
-    tools:context=".JobInfoViewActivity">
+    tools:context=".view.JobInfoViewActivity">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/android_layout_bg"
-    tools:context=".ModifyPartimerInfo1Activity">
+    tools:context=".view.ModifyPartimerInfo1Activity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

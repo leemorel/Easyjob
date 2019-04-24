@@ -38,7 +38,7 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.SplashActivity"
             android:theme="@style/splashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,89 +46,89 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".view.MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".ChooseActivity" />
+        <activity android:name=".view.ChooseActivity" />
         <activity
-            android:name=".RecruiterActivity"
+            android:name=".view.RecruiterActivity"
             android:label="@string/title_activity_recruiter" />
         <activity
-            android:name=".AboutActivity"
+            android:name=".view.AboutActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".CompanyInfoActivity"
-            android:parentActivityName=".CompanyInfoActivity"
+            android:name=".view.CompanyInfoActivity"
+            android:parentActivityName=".view.CompanyInfoActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".ModifyRecruiterInfoActivity"
-            android:parentActivityName=".ModifyRecruiterInfoActivity"
+            android:name=".view.ModifyRecruiterInfoActivity"
+            android:parentActivityName=".view.ModifyRecruiterInfoActivity"
             android:theme="@style/BarTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".ModifyRecruiterInfo1Activity"
+            android:name=".view.ModifyRecruiterInfo1Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SystemNotificationsActivity"
-            android:parentActivityName=".AddjobActivity"
+            android:name=".view.SystemNotificationsActivity"
+            android:parentActivityName=".view.AddjobActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".AddjobActivity"
-            android:parentActivityName=".AddjobActivity"
+            android:name=".view.AddjobActivity"
+            android:parentActivityName=".view.AddjobActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".JobInfoActivity"
-            android:parentActivityName=".JobInfoActivity"
+            android:name=".view.JobInfoActivity"
+            android:parentActivityName=".view.JobInfoActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".ModifyJobActivity"
-            android:parentActivityName=".ModifyJobActivity"
+            android:name=".view.ModifyJobActivity"
+            android:parentActivityName=".view.ModifyJobActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".PartimerActivity"
+            android:name=".view.PartimerActivity"
             android:label="@string/title_activity_partimer"
             android:theme="@style/DefaultCityPickerTheme" />
         <activity
-            android:name=".ModifyPartimerInfo1Activity"
+            android:name=".view.ModifyPartimerInfo1Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".PartimerInfoActivity"
-            android:parentActivityName=".PartimerInfoActivity"
+            android:name=".view.PartimerInfoActivity"
+            android:parentActivityName=".view.PartimerInfoActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".ModifyPartimerInfoActivity"
-            android:parentActivityName=".ModifyPartimerInfoActivity"
+            android:name=".view.ModifyPartimerInfoActivity"
+            android:parentActivityName=".view.ModifyPartimerInfoActivity"
             android:theme="@style/BarTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".JobInfoViewActivity"
-            android:parentActivityName=".JobInfoViewActivity"
+            android:name=".view.JobInfoViewActivity"
+            android:parentActivityName=".view.JobInfoViewActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".CompanyInfoViewActivity"
-            android:parentActivityName=".CompanyInfoActivity"
+            android:name=".view.CompanyInfoViewActivity"
+            android:parentActivityName=".view.CompanyInfoActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".AppyerActivity"
-            android:parentActivityName=".AppyerActivity"
+            android:name=".view.AppyerActivity"
+            android:parentActivityName=".view.AppyerActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".PartimerInfoViewActivity"
-            android:parentActivityName=".PartimerInfoViewActivity"
+            android:name=".view.PartimerInfoViewActivity"
+            android:parentActivityName=".view.PartimerInfoViewActivity"
             android:theme="@style/BarTheme" />
         <activity
-            android:name=".MyJobActivity"
-            android:parentActivityName=".MyJobActivity"
+            android:name=".view.MyJobActivity"
+            android:parentActivityName=".view.MyJobActivity"
             android:theme="@style/BarTheme" />
 
-        <activity android:name=".JobInfoView1Activity"
-            android:parentActivityName=".JobInfoView1Activity"
+        <activity android:name=".view.JobInfoView1Activity"
+            android:parentActivityName=".view.JobInfoView1Activity"
             android:theme="@style/BarTheme"
             />
     </application>
